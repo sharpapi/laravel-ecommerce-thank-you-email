@@ -37,6 +37,11 @@ class EcommerceThankYouEmailService extends SharpApiClient
                 'sharpapi-ecommerce-thank-you-email.api_job_status_polling_wait',
                 180)
         );
+        $this->setUseCustomInterval(
+            (bool) config(
+                'sharpapi-ecommerce-thank-you-email.api_job_status_use_polling_interval',
+                false)
+        );
         $this->setUserAgent('SharpAPILaravelEcommerceThankYouEmail/1.0.0');
     }
 
